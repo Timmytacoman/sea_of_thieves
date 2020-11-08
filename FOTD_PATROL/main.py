@@ -26,7 +26,7 @@ def adventure():
 
 
 def sloop():
-    click_center_of_image("assets/sloop.png", 0.95)  # 0.98 to big
+    click_center_of_image("assets/sloop.png", 0.95)  # 0.98 too big
 
 
 def closed_crew():
