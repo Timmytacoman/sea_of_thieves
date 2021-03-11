@@ -6,7 +6,7 @@ num_servers = 0
 start_time = time.time()
 
 
-# TODO add region capability
+# TODO add region capability for speed
 def click_center_of_image(image, CONFIDENCE):
     print(f"Starting search for {image}")
     while True:
@@ -45,9 +45,29 @@ def join_game():
     set_sail()
 
 
+def make_call():
+    # press escape to exit game
+    pyautogui.press("escape")
+    time.sleep(1)
+    # click on chrome
+    pyautogui.click(52, 1068)
+    # delay
+    time.sleep(1)
+    # click on call button
+    pyautogui.click(370, 695)
+
+
+def located_FOTD():
+    print("FOTD notification recognized!")
+    make_call()
+    exit()
+
+
 def check_notification():
-    # TODO finish this scan for FOTD
-    pass
+    notification_presence = pyautogui.locateCenterOnScreen("assets/notification.png", confidence=.98)
+    if notification_presence is not None:
+        # Found FOTD
+        located_FOTD()
 
 
 def check_server():
